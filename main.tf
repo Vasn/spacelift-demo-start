@@ -6,5 +6,5 @@ resource "spacelift_stack" "main" {
   name              = "vas"
   project_root      = ""
   repository        = "spacelift-iac-demo"
-  terraform_version = "1.9.8"
+  terraform_version = "1.5.7"
 }
