@@ -29,7 +29,7 @@ resource "spacelift_module" "subnet" {
   protect_from_deletion = false
 }
 
-resource "spacelift_aws_integration_attachment" "vpc" {
+resource "spacelift_aws_integration_attachment" "subnet" {
   integration_id = var.aws_integration_id
   module_id      = spacelift_module.subnet.id
   read           = true
