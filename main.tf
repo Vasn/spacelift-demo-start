@@ -31,7 +31,7 @@ resource "spacelift_stack" "main" {
   terraform_version = "1.5.7"
 }
 
-resource "spacelift_aws_integration_attachment" "vpc" {
+resource "spacelift_aws_integration_attachment" "vas_stack" {
   integration_id = var.aws_integration_id
   stack_id       = spacelift_stack.main.id
   read           = true
