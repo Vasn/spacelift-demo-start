@@ -19,6 +19,23 @@ resource "spacelift_aws_integration_attachment" "vpc" {
   write          = true
 }
 
+resource "spacelift_module" "subnet" {
+  name                  = "subnet"
+  terraform_provider    = "aws"
+  administrative        = false
+  branch                = "main"
+  repository            = "spacelift-modules-demo"
+  project_root          = "subnet"
+  protect_from_deletion = false
+}
+
+resource "spacelift_aws_integration_attachment" "vpc" {
+  integration_id = var.aws_integration_id
+  module_id      = spacelift_module.subnet.id
+  read           = true
+  write          = true
+}
+
 # stacks
 resource "spacelift_stack" "main" {
   administrative    = false
