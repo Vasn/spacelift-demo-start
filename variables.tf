@@ -10,10 +10,13 @@ variable "spacelift_branch" {
   type = string
 }
 
+variable "terraform_provider" {
+  type = string
+}
+
 variable "modules" {
   type = map(object({
     name = string
-    terraform_provider = string
     project_root = string
   }))
 }

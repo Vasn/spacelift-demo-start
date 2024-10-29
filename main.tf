@@ -7,8 +7,8 @@ resource "spacelift_module" "aws" {
 
   repository = var.spacelift_repository
   branch = var.spacelift_branch
+  terraform_provider = var.terraform_provider
   name = each.value.name
-  terraform_provider = each.value.terraform_provider
   project_root = each.value.project_root
   administrative = false
   protect_from_deletion = false
